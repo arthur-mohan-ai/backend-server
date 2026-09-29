@@ -5,8 +5,7 @@ Public API Base URL: https://api.arthurmohanai.blog
 > PM2 manages node service in background; closing Terminal will NOT take backend offline.
 
 ## ⚠️ Important Notes
-- Cloudflare Tunnel runs as a system launchd background service. Closing Terminal does NOT stop tunnel.
-- Do NOT run multiple node instances at the same time (port 3000 conflict).
+- Do NOT run multiple node instances at the same time.
 
 ## Local Test Endpoint
 `http://localhost:3000/api/hello`
