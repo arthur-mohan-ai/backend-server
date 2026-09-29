@@ -1,6 +1,11 @@
 #!/bin/bash
 cd /Users/wnus/backend-server
+echo "pulling latest code from github..."
 git pull origin main
-echo "Code pulled from Github"
+if [ $? -ne 0]; then
+  echo "git pull failed! deployment aborted, server not restarted"
+  exi1 1
+fi
+echo "code pulled from github"
 pm2 restart backend-api
-echo "Server restarted via pm2"
+echo "server restarted via pm2"
