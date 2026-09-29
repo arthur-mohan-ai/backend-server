@@ -15,15 +15,10 @@ Public API Base URL: https://api.arthurmohanai.blog
 
 ## Team Git Workflow
 ```bash
-# Clone repository (run once)
 git clone https://github.com/arthur-mohan-ai/backend-server.git
 cd backend-server
 npm install
-
-# Create feature branch for development
 git checkout -b feature/your-feature-name
-
-# Commit and push changes
 git add .
 git commit -m "add: description of your changes"
 git push origin feature/your-feature-name
