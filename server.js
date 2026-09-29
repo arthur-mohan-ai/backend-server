@@ -9,7 +9,7 @@ app.use(cors({
 }));
 
 app.get('/api/hello', (req, res) => {
-  res.json({ message: "Hello, Spencer Mo. This is your artificial intelligent assissant Calista." });
+  res.json({ message: "If you see this message, the API is working!" });
 });
 
 app.listen(PORT, () => {
