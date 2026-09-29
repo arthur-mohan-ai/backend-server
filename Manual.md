@@ -57,9 +57,9 @@ deploy.sh source code:
 #!/bin/bash
 cd /Users/wnus/backend-server
 git pull origin main
-echo "✅ Code pulled from Github"
+echo "Code pulled from Github"
 pm2 restart backend-api
-echo "✅ Server restarted via pm2"
+echo "Server restarted via pm2"
 
 Give execution permission (run once only):
 chmod +x deploy.sh
