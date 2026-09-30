@@ -1,6 +1,10 @@
 #!/bin/zsh
+set -e
 cd /Users/wnus/backend-server
 git fetch origin main
 git reset --hard origin/main
 npm ci
-pm2 restart backend-api
+npm run build
+pm2 startOrRestart ecosystem.config.cjs
+pm2 save
+pm2 list
