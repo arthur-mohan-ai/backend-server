@@ -9,7 +9,7 @@ app.use(cors({
 }));
 
 app.get('/api/hello', (req, res) => {
-  res.json({ message: "If you see this message, the API is working" });
+  res.json({ message: "Welcome" });
 });
 
 app.listen(PORT, () => {
