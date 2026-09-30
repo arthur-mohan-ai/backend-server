@@ -1,18 +1,16 @@
 {
-  "name": "backend-server",
-  "version": "1.0.0",
-  "description": "",
-  "main": "server.js",
+  "name": "shotski",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev:api": "npm run dev -w @shotski/api",
+    "build": "npm run build --workspaces --if-present",
+    "start:api": "npm run start -w @shotski/api"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "cors": "^2.8.6",
-    "express": "^5.2.1"
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }
