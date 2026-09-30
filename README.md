@@ -1,24 +1,50 @@
-# Backend Server
+# Shotski Backend
+
 Public API Base URL: https://api.arthurmohanai.blog
 
-> Node backend running on Mac Mini, served via Cloudflare Zero Trust Tunnel.
-> PM2 manages node service in background; closing Terminal will NOT take backend offline.
+> TypeScript + Express API running on the Mac mini, served via Cloudflare Zero Trust Tunnel.
+> PM2 keeps it running in the background; closing Terminal will NOT take the backend offline.
 
-## ⚠️ Important Notes
-- Do NOT run multiple node instances at the same time.
+## Repository layout
 
-## Local Test Endpoint
-`http://localhost:3000/api/hello`
+```
+apps/api/       Express API (TypeScript)
+packages/       Shared code between apps (none yet)
+docs/           Design documents (e.g. data-model.md)
+```
 
-## Public Online Endpoint
-`https://api.arthurmohanai.blog/api/hello`
+This is an npm workspaces monorepo: run all npm commands from the repository root.
 
-## Team Git Workflow
+## Getting started
+
 ```bash
-git clone https://github.com/arthur-mohan-ai/backend-server.git
-cd backend-server
-npm install
-git checkout -b feature/your-feature-name
-git add .
-git commit -m "add: description of your changes"
-git push origin feature/your-feature-name
+git clone https://github.com/shotski-server/shotski-backend-server.git
+cd shotski-backend-server
+npm ci
+npm run dev:api
+```
+
+Then open http://localhost:3000/api/hello. The dev server restarts automatically when you save a file.
+
+## Build and run like production
+
+```bash
+npm run build
+npm run start:api
+```
+
+## Deployment
+
+Run `deploy.sh` on the Mac mini. It resets to `origin/main`, installs dependencies with `npm ci`,
+builds, and (re)starts the API with PM2 using `ecosystem.config.cjs`.
+
+⚠️ Do NOT run multiple node instances at the same time.
+
+## Endpoints
+
+- Local: `http://localhost:3000/api/hello`
+- Public: `https://api.arthurmohanai.blog/api/hello`
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for branch names, commit messages, PR and review rules.
